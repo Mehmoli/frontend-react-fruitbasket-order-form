@@ -26,7 +26,16 @@ function App() {
         setKiwi(0);
     }
 
-
+    const resetFormFields = () => {
+        setFrontName('');
+        setLastName('');
+        setAge(0);
+        setZipCode('');
+        toggleDeliveryFrequency('week-frequency');
+        toggleDeliveryDayTime('daytime');
+        setComments('');
+        toggleAgreeConditions(false);
+    }
     function formHandleOnSubmit(e) {
         e.preventDefault();
         console.log(`
@@ -39,6 +48,7 @@ function App() {
         Algemene voorwaarden: ${agreeConditions}`
         );
         console.log(`Fruitmand bestelling - aardbeien: ${strawberry}, bananen: ${banana}, appels: ${apple}, kiwi's: ${kiwi}`);
+        resetFormFields();
     }
 
     return (
@@ -225,7 +235,7 @@ function App() {
                         name="termCondition"
                         className="element checkbox"
                         type="checkbox"
-                        value={agreeConditions}
+                        checked={agreeConditions}
                         onChange={(e) => toggleAgreeConditions(e.target.checked)}
                     />
                     <label
