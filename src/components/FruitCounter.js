@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button'
 
-function FruitCounter({ setCounter, counter }) {
+function FruitCounter({setCounter, counter}) {
     return (
         <>
             <Button buttonType="button" isDisabled={counter < 1} handleClick={() => setCounter(counter - 1)}>

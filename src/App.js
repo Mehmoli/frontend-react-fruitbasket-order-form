@@ -3,6 +3,9 @@ import {useState} from "react";
 import './App.css';
 import Button from "./components/Button";
 import FruitCounter from "./components/FruitCounter";
+import FormInput from './components/FormInput';
+import FormLabel from './components/FormLabel';
+import Logo from './assets/screenshot-logo.png'
 
 
 function App() {
@@ -58,7 +61,7 @@ function App() {
     return (
         <>
             <section>
-                <h1>Fruitmand bezorgservice</h1>
+                <img src={Logo} alt='logo'></img>
                 <div className='fruits'>
 
                     <div className='fruit'>
@@ -101,75 +104,71 @@ function App() {
                 <fieldset>
                     <legend>Bestelformulier</legend>
 
-                    <label
-                        className="formClass"
-                        htmlFor="frontName"
-                    >
-                        Voornaam
-                    </label>
-                    <input
-                        id="frontName"
-                        name="frontName"
-                        type="text"
-                        maxLength="50"
+                    <FormLabel
+                        clasAttribute="formClass"
+                        htmlForName="frontName"
+                        label="Voornaam"
+                    />
+
+
+                    <FormInput
+                        nameAtributeId="frontName"
+                        nameAtribute="frontName"
+                        inputType="text"
+                        length="50"
                         value={frontName}
-                        onChange={(e) => setFrontName(e.target.value)}
+                        handleChange={setFrontName}
                     />
                     <br/><br/>
 
-                    <label
-                        className="formClass"
-                        htmlFor="lastName"
-                    >
-                        Achternaam
-                    </label>
-                    <input
-                        id="lastName"
-                        name="lastName"
-                        type="text"
-                        maxLength="50"
+                    <FormLabel
+                        clasAttribute="formClass"
+                        htmlForName="lastName"
+                        label="Achternaam"
+                    />
+                    <FormInput
+                        nameAtributeId="lastName"
+                        nameAtribute="LastName"
+                        inputType="text"
+                        length="50"
                         value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
+                        handleChange={setLastName}
                     />
                     <br/><br/>
-                    <label
-                        className="formClass"
-                        htmlFor="age"
-                    >
-                        Leeftijd
-                    </label>
-                    <input
-                        id="age"
-                        name="age"
-                        type="number"
-                        maxLength="3"
+                    <FormLabel
+                        clasAttribute="formClass"
+                        htmlForName="age"
+                        label="Leeftijd"
+                    />
+                    <FormInput
+                        nameAtributeId="age"
+                        nameAtribute="age"
+                        inputType="number"
+                        length="3"
                         value={age}
-                        onChange={(e) => setAge(e.target.value)}
-
+                        handleChange={setAge}
                     />
                     <br/><br/>
-                    <label
-                        className="formClass"
-                        htmlFor="zipCode"
-                    >
-                        Postcode
-                    </label>
-                    <input
-                        id="zipCode"
-                        name="zipCode"
-                        type="text"
-                        maxLength="6"
+                    <FormLabel
+                        clasAttribute="formClass"
+                        htmlForName="zipCode"
+                        label="Postcode"
+                    />
+                    <FormInput
+                        nameAtributeId="zipCode"
+                        nameAtribute="zipCode"
+                        inputType="text"
+                        length="6"
                         value={zipCode}
-                        onChange={(e) => setZipCode(e.target.value)}
+                        handleChange={setZipCode}
                     />
                     <br/><br/>
-                    <label
-                        className="formClass"
-                        htmlFor="deliveryFrequency"
-                    >
-                        Bezorgfrequentie
-                    </label>
-                    <br/><br/>
+                    <FormLabel
+                        clasAttribute="formClass"
+                        htmlForName="deliveryFrequency"
+                        label="Bezorgfrequentie"
+                    />
+                    <br/>
                     <select
                         id="deliveryFrequency"
                         name="deliveryFrequency"

@@ -1,5 +1,13 @@
-h1 {
-    text-align: center;
+section {
+    width: 800px;
+    margin: 0 auto;
+}
+
+img {
+    display: block;
+    margin:0 auto;
+    width: 60%;
+
 }
 
 .fruits {
