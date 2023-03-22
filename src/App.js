@@ -1,6 +1,9 @@
 import React from 'react';
 import {useState} from "react";
 import './App.css';
+import Button from "./components/Button";
+import FruitCounter from "./components/FruitCounter";
+
 
 function App() {
 
@@ -59,31 +62,38 @@ function App() {
 
                     <div className='fruit'>
                         🍓Aardbeien
-                        <button type="button" disabled={strawberry <= 0}
-                                onClick={() => setStrawberry(strawberry - 1)}>-</button>
-                        {strawberry}
-                        <button type="button" onClick={() => setStrawberry(strawberry + 1)}>+</button>
+                        <FruitCounter
+                            counter={strawberry}
+                            setCounter={setStrawberry}
+                        >{strawberry}</FruitCounter>
                     </div>
                     <div className='fruit'>
-                        🍌Bananen
-                        <button type="button" disabled={banana <= 0} onClick={() => setBanana(banana - 1)}>-</button>
-                        {banana}
-                        <button type="button" onClick={() => setBanana(banana + 1)}>+</button>
+                        🍌Bananas
+                        <FruitCounter
+                            counter={banana}
+                            setCounter={setBanana}
+                        />
                     </div>
                     <div className='fruit'>
                         🍏Appels
-                        <button type="button" disabled={apple <= 0} onClick={() => setAppel(apple - 1)}>-</button>
-                        {apple}
-                        <button type="button" onClick={() => setAppel(apple + 1)}>+</button>
+                        <FruitCounter
+                            counter={apple}
+                            setCounter={setAppel}
+                        />
                     </div>
                     <div className='fruit'>
                         🥝Kiwi's
-                        <button type="button" disabled={kiwi <= 0} onClick={() => setKiwi(kiwi - 1)}>-</button>
-                        {kiwi}
-                        <button type="button" onClick={() => setKiwi(kiwi + 1)}>+</button>
+                        <FruitCounter
+                            counter={kiwi}
+                            setCounter={setKiwi}
+                        />
                     </div>
 
-                    <button type="button" className='reset' onClick={resetCounters}>Reset</button>
+                    <Button
+                        buttonType="button"
+                        className='reset' handleClick={resetCounters}>
+                        Reset
+                    </Button>
                 </div>
             </section>
             <form onSubmit={formHandleOnSubmit}>
