@@ -39,6 +39,7 @@ function App() {
         setComments('');
         toggleAgreeConditions(false);
     }
+
     function formHandleOnSubmit(e) {
         e.preventDefault();
         console.log(`
@@ -256,14 +257,11 @@ function App() {
                     </label>
                     <br/><br/>
 
-                    <button
-                        id="submitButton"
-                        type="submit"
-                        name="submit"
-                        value="Verzend"
+                    <Button
+                        buttonType="submit"
                     >
                         Verzend
-                    </button>
+                    </Button>
                     <br/><br/>
 
                 </fieldset>
