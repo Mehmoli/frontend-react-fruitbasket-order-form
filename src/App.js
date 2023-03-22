@@ -65,7 +65,7 @@ function App() {
                         <FruitCounter
                             counter={strawberry}
                             setCounter={setStrawberry}
-                        >{strawberry}</FruitCounter>
+                        />
                     </div>
                     <div className='fruit'>
                         🍌Bananas
