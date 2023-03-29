@@ -2,7 +2,6 @@ import React from 'react'
 
 function FormInput({nameAttribute, nameAttributeId, inputType, length, value, handleChange}) {
     return (
-        <>
             <input
                 name={nameAttribute}
                 id={nameAttributeId}
@@ -11,7 +10,6 @@ function FormInput({nameAttribute, nameAttributeId, inputType, length, value, ha
                 value={value}
                 onChange={(e) => handleChange(e.target.value)}
             />
-        </>
     )
 }
 
